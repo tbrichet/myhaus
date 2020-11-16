@@ -64,8 +64,7 @@ Tara Brichetto, Joseph DeFelice, Richard Flores, Stephen Pena, Chris Walston
 ## Links:
 Deployed Application: https://my-haus.herokuapp.com/
 Deployed Application (Backup): https://myhaus.herokuapp.com/ <br>
-Github Repository (Final): https://github.com/tbrichet/myhaus <br>
-Github Repository (All Drafts): https://github.com/Richardflores009/MyHaus <br>
+Github Repository: https://github.com/Richardflores009/MyHaus <br>
 Group Presentation Link: https://docs.google.com/presentation/d/1xQFHIo6Cto5SCeIT4NqHazeNlVLE9taPFQ-gR5MFmlM/edit?usp=sharing <br>
 
 ## Screenshots:

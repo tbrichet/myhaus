@@ -1,0 +1,78 @@
+
+    <!--nav col-->
+    <div class="col-2">
+        <nav class="nav-container">
+             <h1 href="#" class="nav-title">
+            {{!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg> --}}
+            MyHaus
+            </h1>
+            <a href="/home" class="nav-link">Dashboard</a>
+            <a href="/post" class="nav-link">Maintenance Requests</a>
+            <a href="/pet" class="nav-link">Pet Updates</a>
+            </nav>
+    </div>
+
+
+{{#with property as | property |}}
+{{#with property.landlord as | land |}}
+<div class="col-10 main-container">
+    <h1 class="dashboard-title">Hello,<br>{{land.first_name}} {{land.last_name}}!</h1>
+    <div class="row justify-content-start">
+        <div class="table-wrapper shadow col-5">
+            <div class="table-title">Your Information</div>
+            <div class="row table-info">
+                <div class="col-6">
+                    
+                    <form action="">                       
+                        <fieldset disabled="disabled">                         
+                            <div class="form-group">
+                                <label >First Name</label>
+                                <input type="text"  class="form-control" placeholder="{{land.first_name}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Last Name</label>
+                                <input type="text" id="disabledTextInput" class="form-control" placeholder="{{land.last_name}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Email</label>
+                                <input type="text" id="disabledTextInput" class="form-control" placeholder="{{land.email}}">
+                            </div>
+                            
+                        </fieldset>
+                        
+                    </form>
+                  
+                </div>
+                <div class="col-6">
+                    <form class="form-update" action="">
+                        <fieldset >
+                            <div class="form-group">
+                                <label for="disabledTextInput">Complex</label>
+                                <input id="updateComplex" type="text" id="disabledTextInput" class="form-control" value="{{property.complex}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Unit</label>
+                                <input id="updateUnitNumber" type="text" id="disabledTextInput" class="form-control" value="{{property.unit}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="property-id" value="{{property.id}}" />
+                                <label for="disabledTextInput">Rent</label>
+                                <input id="updateRent" type="text" id="disabledTextInput" class="form-control" value="{{property.rent}}">
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="form-button">Update Info</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ {{/with}}
+    {{/with}}
+
+<script src="/javascript/edit-property.js"></script>
+
+

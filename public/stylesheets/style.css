@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+html, body {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+/*scrollbar styles*/
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #7D9694;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(88, 105, 104);
+  }
+
+/*login/sign up page*/
+.signin-background {
+    background-image: url('/img/login-background.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+}
+.form-title {
+    text-align: center;
+    font-size: 40px;
+    padding: 5px;
+    color: black;
+}
+.form-wrapper {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 165.5px 10px;
+}
+.signup-form-wrapper {
+    margin: 33px auto;
+}
+.tenant-form-wrapper {
+    padding: 137px 10px;
+}
+.form-background {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0px 0px 20px;
+}
+.form-wrapper label {
+    text-align: left;
+    margin-left: 125px;
+}
+.form-wrapper input {
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    border: none;
+    border-bottom: thin solid #7D9694;
+}
+.form-wrapper button {
+    padding: 5px 15px;
+    width: 25%;
+    background: #7D9694;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.form-wrapper p {
+    margin: 10px 0;
+    padding: 5px;
+}
+.radio-wrapper label, .radio-wrapper input {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0;
+    width: 5%;
+}
+.small-text {
+    font-size: 15px;
+}
+footer {
+    background: #7D9694;
+    padding: 13px 5px 0px 5px;
+    color: white;
+    font-size: 16px;
+}
+
+
+/*dashboard page*/
+.nav-container {
+    background-color: #7D9694;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    width: 250px;
+}
+.nav-container a {
+    padding: 15px;
+    text-decoration: none;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+.nav-link:hover {
+    background: white;
+    transition: 0.3s;
+    color: black;
+}
+.nav-title {
+    padding: 15px; 
+}
+.lower-nav a {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.lower-nav a:hover {
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+.main-container {
+    background-image: url('/img/dashboard-bg.png');
+    background-repeat: repeat;
+    height: 60vw;
+    margin-left: 250px;
+}
+.container-fluid {
+    display:table;
+    width: 100%;
+    margin-top: -50px;
+    padding: 50px 0 0 0; /*set left/right padding according to needs*/
+    box-sizing: border-box;
+    background-repeat: red;
+}
+.dashboard-title {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+.main-form-wrapper {
+    padding: 10px;
+    margin: 10px;
+    background: white;
+    width: 50%;
+    margin: 10px auto 25px auto;
+    border-radius: 10px;
+}
+.main-form {
+    width: 100%;
+}
+.main-form input {
+    width: 100%;
+    border: none;
+    border-bottom: thin solid #7D9694;
+}
+.left-form {
+    float: left;
+    width: 49%;
+}
+.right-form {
+    float: right;
+    width: 49%;
+}
+.form-button {
+    padding: 5px 15px;
+    margin: 10px 0;
+    width: 100%;
+    background: #7D9694;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.form-button:focus {
+    outline: none;
+}
+.fab {
+    width: 70px;
+    height: 70px;
+    background-color: #7D9694;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+  
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+  
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+ }
+  
+ .fab:hover {
+    box-shadow: 0 6px 14px 0 #666;
+    transform: scale(1.05);
+    cursor: pointer;
+ }
+/*card styles*/
+.card {
+    width: 90%;
+    margin: 25px 0;
+    border-radius: 15px;
+}
+.card h5 {
+    text-align: center;
+}
+.list-wrapper-left {
+    float: left;
+    list-style: none;
+}
+.list-wrapper-right {
+    float: right;
+    text-align: right;
+    list-style: none;
+}
+.list-wrapper-left li, .list-wrapper-right li {
+    padding: 0;
+    margin: 0;
+}
+.card a {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: #7D9694;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+/*tenant dashboard page*/           
+.table-wrapper {
+    background: white;
+    padding: 0;
+    border-radius: 10px;
+    margin: 15px;
+}
+.table-wrapper input, label {
+    width: 100%;
+}
+.table-wrapper input {
+    padding: 5px;
+}
+.modal input {
+    padding: 5px;
+}
+.table-title {
+    color: white;
+    background: #7D9694;
+    width: 100%;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.table-info {
+    padding: 5px 15px;
+    background-color: white;
+}
+.table-desc {
+    padding: 5px 15px;
+}
+.update-button {
+    width: 25%;
+    text-align: center;
+    float: right;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 15px;
+    background: #7D9694;
+}
+.update-button:hover {
+    text-decoration: none;
+    color: white;
+}
+.update-button:focus {
+    outline: none;
+}
+.service-wrapper {
+    background: white;
+    width: 100%;
+    padding: 0;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+
+  /* Modal Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/*media queries*/
+@media screen and (max-width: 1200px) {
+    /*login screen*/
+    .form-title {
+        font-size: 3vw;
+    }
+    .form-wrapper {
+        padding: 168px 10px;
+        width: 75%;
+    }
+    .form-wrapper label {
+        text-align: left;
+        margin-left: 155px;
+    }
+    .signup-form-wrapper {
+        margin: 33px auto;
+    }
+    .tenant-form-wrapper {
+        padding: 139.5px 10px;
+    }
+    .form-background {
+        padding: 15px;
+    }
+    .radio-wrapper label, .radio-wrapper input {
+        margin: 0 5px;
+        width: 5%;
+    }
+    /*dashboard*/
+
+}
+
+@media screen and (max-width: 980px) {
+    /*login screen*/
+    .form-title {
+        font-size: 4vw;
+    }
+    .form-wrapper {
+        padding: 166.5px 10px;
+        width: 100%;
+    }
+    .form-wrapper label {
+        text-align: left;
+        margin-left: 155px;
+    }
+    .form-wrapper button {
+        width: 50%;
+    }
+    .signup-form-wrapper {
+        margin: 33px auto;
+    }
+    .tenant-form-wrapper {
+        padding: 138px 10px;
+    }
+    .form-background {
+        padding: 15px;
+    }
+
+    /*dashboard*/
+}
+
+@media screen and (max-width: 768px) {
+    /*login screen*/
+    .form-title {
+        font-size: 5vw;
+    }
+    .form-wrapper {
+        padding: 167px 10px;
+        width: 100%;
+    }
+    .form-wrapper label {
+        text-align: left;
+        margin-left: 110px;
+    }
+    .form-wrapper button {
+        width: 50%;
+    }
+    .signup-form-wrapper {
+        margin: 33px auto;
+    }
+    .tenant-form-wrapper {
+        padding: 138.5px 10px;
+    }
+    .form-background {
+        padding: 15px;
+    }
+    .radio-wrapper label, .radio-wrapper input {
+        margin: 0 5px;
+        padding: 0;
+        width: 10%;
+    }
+    /*dashboard*/
+}
+
+@media screen and (max-width: 575px) {
+    /*login screen*/
+    .form-title {
+        font-size: 7vw;
+    }
+    .form-wrapper {
+        padding: 145.5px 10px;
+        width: 100%;
+    }
+    .form-wrapper label {
+        text-align: left;
+        margin-left: 60px;
+    }
+    .form-wrapper input {
+        width: 75%;
+    }
+    .form-wrapper button {
+        width: 75%;
+        margin: 15px;
+        padding: 10px;
+    }
+    .signup-form-wrapper {
+        margin: 33px auto;
+    }
+    .tenant-form-wrapper {
+        padding: 117px 10px;
+    }
+    .form-background {
+        padding: 15px;
+    }
+    .radio-wrapper label, .radio-wrapper input {
+        margin: 0 5px;
+        width: 7%;
+    }
+
+    /*dashboard*/
+}
+

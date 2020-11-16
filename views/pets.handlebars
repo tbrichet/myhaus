@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyHaus</title>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+
+    <!--Navigation-->
+    <div class="col-2">
+        <nav class="nav-container">
+            <h1 href="#" class="nav-title">MyHaus</h1>
+            <a href="/home" class="nav-link">Dashboard</a>
+            <a href="/post" class="nav-link">Maintenance Requests</a>
+            <button type="button" class="nav-link" id="landlordlogout">Log Out</button>
+        </nav>
+    </div>
+
+    <!--Requests Display-->
+    <div class="col-10 main-container">
+    {{#each landlord as |landlord|}}
+    <h1 class="dashboard-title">Hello,<br>{{landlord.first_name}} {{landlord.last_name}}!</h1>
+    {{/each}}
+    <div class="row justify-content-start">
+        {{#each pets}}
+        <div class="table-wrapper shadow col-5">
+            <div class="table-title">Pet Update #{{@index}}</div>
+            <div class="row table-info">
+                <div class="col-6">
+                    
+                    <form action="">                       
+                        <fieldset disabled="disabled">                         
+                            <div class="form-group">
+                                <label>Are you adding or removing a pet? </label>
+                                <input type="text"  class="form-control" placeholder="{{status}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Type and number of pets being added/removed:</label>
+                                <input type="text" id="disabledTextInput" class="form-control" placeholder="{{description}}">
+                            </div>
+                        </fieldset>
+                        <button type="button" data-pet-id="{{id}}" onclick="deletePet(this.getAttribute('data-pet-id'));" id="delete-pet-update" class="form-button" data-dismiss="modal">Delete</button>
+                    </form>
+                  
+                </div>
+            
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+    <script src="/javascript/add-post.js"></script>
+    <script src="/javascript/landlord-logout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

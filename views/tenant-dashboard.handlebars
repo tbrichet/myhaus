@@ -1,0 +1,156 @@
+{{#if loggedIn}}
+    <!--nav col-->
+    <div class="col-2">
+        <nav class="nav-container">
+             <h1 href="#" class="nav-title">
+            MyHaus
+            </h1>
+            <button type="button" class="nav-link" data-toggle="modal" id="landlordlogout">Log Out</button>
+            </nav>
+    </div>
+
+{{#each property as |property|}}
+<div class="col-10 main-container">
+    <h1 class="dashboard-title">Hello, <br>{{tenant.first_name}} {{tenant.last_name}}!</h1>
+    <div class="row justify-content-start">
+        <div class=" table-wrapper shadow col-5">
+            <div class="table-title">Your Information</div>
+            <div class="row table-info">
+                <div class="col-6">
+                    <form action="">
+                        <fieldset >
+                            <div class="form-group">
+                                <label for="disabledTextInput">First Name</label>
+                                <input id="updateFirst" type="text" id="disabledTextInput" class="form-control" value="{{tenant.first_name}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Last Name</label>
+                                <input id="updateLast" type="text" id="disabledTextInput" class="form-control" value="{{tenant.last_name}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Email</label>
+                                <input id="updateEmail" type="text" id="disabledTextInput" class="form-control" value="{{tenant.email}}">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form action="">
+                        <fieldset >
+                            <div class="form-group">
+                                <label for="disabledTextInput">Complex</label>
+                                <input id="updateComplex" type="text" id="disabledTextInput" class="form-control" value="{{property.complex}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Unit</label>
+                                <input id="updateUnitNumber" type="text" id="disabledTextInput" class="form-control" value="{{property.unit}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Rent</label>
+                                <input id="updateRent" type="text" id="disabledTextInput" class="form-control" value="{{property.rent}}">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <button type="submit"   data-tenant-id="{{tenant.id}}" data-property-id="{{property.id}}" onclick="signupFormHandler(this.getAttribute('data-property-id'), this.getAttribute('data-tenant-id'));" class="form-button">Update Info</button>
+        </div>
+        <div class="col-6">
+            <div class="col-12 service-wrapper shadow">
+                <div class="table-title">Request Maintenance</div>
+                <p class="table-desc">Please contact us if you need any maintenance on:</p>
+                <div class="table-info">
+                    <ul>
+                        <li>Physical damages</li>
+                        <li>Appliances</li>
+                    </ul>
+                    
+                </div>
+                <button  type="button" class="update-button" data-toggle="modal" data-target="#create-tenant">+</button>
+                
+                <!--Maintenance Request Submit Form -->
+   
+        <div class="modal" id="create-tenant" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Create New Maintenance Request</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" action="">
+                            <div class="">
+                                <input type="hidden" name="landlord-id" value="{{landlord.id}}" />
+                                <input type="hidden" name="tenant-id" value="{{tenant.id}}" />
+                                <label for="rentAmt">Subject/Title:</label>
+                                <input id="addTitle" type="text" class="rentAmt" placeholder="Spiders">
+                                 <label for="address#">Brief Description of Issue:</label>
+                                <textarea id="addBody" type="text" class="address#" placeholder="Face eating spiders"></textarea>
+                            </div>
+                            <button type="submit" data-index="{{@index}}" class="form-button">Submit</button>
+                        </form>
+                    </div>
+                   
+                    <div class="modal-footer">
+                        <button type="button"  class="form-button" data-dismiss="modal">Close</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+            </div>
+            {{/each}}
+            
+        </div>
+        <div class="col-12 service-wrapper shadow">
+                <div class="table-title">Update Pet Status</div>
+                <p class="table-desc">Please update if you wish to add or remove a pet from your lease.</p>
+                <button type="button" class="update-button" data-toggle="modal" data-target="#pet-update">+</button>
+            </div>
+    </div>
+    
+</div>
+
+<!--Pet Update Submit Form -->
+    {{#each property as |property|}}
+        <div class="modal" id="pet-update" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Submit Pet Update</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-pet" action="">
+                            <div class="">
+                                <input type="hidden" name="landlord-id" value="{{landlord.id}}" />
+                                <input type="hidden" name="tenant-id" value="{{tenant.id}}" />
+                                <label for="petStatus">Are you adding or removing a pet?</label>
+                                <input id="petStatusInfo" name="status" type="text" class="rentAmt" placeholder="Add/Remove">
+                                 <label for="petDescription">Please indicate the pet type and quantity:</label>
+                                <input id="petDescriptionInfo" name="pet" type="text" class="address#" placeholder="Dog(2)">
+                            </div>
+                            <button type="submit" data-index="{{@index}}" class="form-button">Submit</button>
+                        </form>
+                    </div>
+                   
+                    <div class="modal-footer">
+                        <button type="button"  class="form-button" data-dismiss="modal">Close</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    
+
+
+<script src="/javascript/add-post.js"></script>
+<script src="/javascript/tenant-logout.js"></script>
+<script src="/javascript/edit-tenant-by-tenant.js"></script>
+{{/if}}
